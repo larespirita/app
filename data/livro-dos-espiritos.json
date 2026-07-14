@@ -6,30 +6,467 @@
   "capitulos": [
     {
       "numero": 1,
-      "titulo": "Deus",
+      "parte": "Parte Primeira — Das causas primárias",
+      "titulo": "De Deus",
       "questoes": [
         {
           "numero": 1,
           "pergunta": "O que é Deus?",
-          "resposta": "Deus é a inteligência suprema, causa primária de todas as coisas.",
-          "comentario": "Kardec observa que a definição intelectual de Deus permanece incompleta diante da limitada natureza humana; ainda assim, a razão e a observação da ordem do universo bastam para afastar o materialismo."
+          "resposta": "Deus é a inteligência suprema, causa primeira de todas as coisas.",
+          "comentario": ""
+        },
+        {
+          "numero": 2,
+          "pergunta": "O que se deve entender por infinito?",
+          "resposta": "Aquilo que não tem princípio nem fim: o desconhecido; tudo o que é desconhecido é infinito.",
+          "comentario": ""
+        },
+        {
+          "numero": 3,
+          "pergunta": "Poder-se-ia dizer que Deus é o infinito?",
+          "resposta": "Definição incompleta. Pobreza da linguagem humana, insuficiente para definir as coisas que estão acima da inteligência do homem.",
+          "comentario": "Deus é infinito em suas perfeições, mas o infinito é uma abstração; dizer que Deus é o infinito é tomar o atributo pela própria coisa, e definir algo desconhecido por outra coisa igualmente desconhecida."
         },
         {
           "numero": 4,
-          "pergunta": "De que modo se pode provar a existência de Deus?",
-          "resposta": "Pelo axioma que se aplica a todas as coisas: não há efeito sem causa. Procurai a causa daquilo que não é obra do homem e a razão vos dará resposta.",
+          "pergunta": "Onde se pode encontrar a prova da existência de Deus?",
+          "resposta": "Num axioma que vocês aplicam às suas próprias ciências: não há efeito sem causa. Procurem a causa de tudo o que não é obra do homem, e a razão lhes responderá.",
+          "comentario": "Para crer em Deus, basta lançar os olhos sobre as obras da criação. O universo existe, logo tem uma causa. Duvidar da existência de Deus seria negar que todo efeito tem uma causa, e afirmar que o nada pôde produzir alguma coisa."
+        },
+        {
+          "numero": 5,
+          "pergunta": "Que consequência se pode tirar do sentimento intuitivo que todos os homens trazem em si da existência de Deus?",
+          "resposta": "Que Deus existe; pois de onde viria esse sentimento, se não se apoiasse em nada? É ainda uma consequência do princípio de que não há efeito sem causa.",
+          "comentario": ""
+        },
+        {
+          "numero": 6,
+          "pergunta": "Esse sentimento íntimo que temos da existência de Deus não seria fruto da educação, produto de ideias adquiridas?",
+          "resposta": "Se assim fosse, por que os povos mais primitivos também o teriam?",
+          "comentario": "Se o sentimento da existência de um ser supremo fosse apenas produto de um ensinamento, não seria universal, e só existiria, como as noções científicas, entre aqueles que puderam recebê-lo."
+        },
+        {
+          "numero": 7,
+          "pergunta": "Poder-se-ia encontrar a causa primeira da formação das coisas nas propriedades íntimas da matéria?",
+          "resposta": "Mas, então, qual seria a causa dessas propriedades? É sempre necessária uma causa primeira.",
+          "comentario": "Atribuir a formação primeira das coisas às propriedades íntimas da matéria seria tomar o efeito pela causa, pois essas próprias propriedades são um efeito, que precisa ter uma causa."
+        },
+        {
+          "numero": 8,
+          "pergunta": "Aguardando verificação",
+          "resposta": "TEXTO A INSERIR — pergunta ainda sendo cotejada com a fonte francesa antes de publicar, para não arriscar uma tradução imprecisa.",
+          "comentario": ""
+        },
+        {
+          "numero": 9,
+          "pergunta": "Onde se vê, na causa primeira, uma inteligência suprema, superior a todas as inteligências?",
+          "resposta": "Vocês têm um provérbio que diz: pela obra se reconhece o obreiro. Pois bem: olhem para a obra e procurem o obreiro. É o orgulho que gera a incredulidade. O homem orgulhoso não quer nada acima de si; por isso se chama de espírito forte. Pobre criatura, que um sopro de Deus pode derrubar!",
+          "comentario": "Julga-se o poder de uma inteligência pelas suas obras; como nenhum ser humano poderia criar o que a natureza produz, a causa primeira é, portanto, uma inteligência superior à humanidade."
+        },
+        {
+          "numero": 10,
+          "pergunta": "Aguardando verificação",
+          "resposta": "TEXTO A INSERIR — pergunta ainda sendo cotejada com a fonte francesa antes de publicar, para não arriscar uma tradução imprecisa.",
+          "comentario": ""
+        },
+        {
+          "numero": 11,
+          "pergunta": "Será dado um dia ao homem compreender o mistério da Divindade?",
+          "resposta": "Quando seu espírito não estiver mais obscurecido pela matéria e, por sua perfeição, dela se houver aproximado, então ele a verá e a compreenderá.",
+          "comentario": ""
+        },
+        {
+          "numero": 12,
+          "pergunta": "Se não podemos compreender a natureza íntima de Deus, podemos ao menos ter uma ideia de algumas de suas perfeições?",
+          "resposta": "Sim, de algumas. O homem as compreende melhor à medida que se eleva acima da matéria; ele as entrevê pelo pensamento.",
+          "comentario": ""
+        },
+        {
+          "numero": 13,
+          "pergunta": "Deus seria um ser distinto, ou seria, como pensam alguns, o resultado da reunião de todas as forças e de todas as inteligências do universo?",
+          "resposta": "Se fosse assim, Deus não existiria, pois seria o efeito, e não a causa; ele não pode ser as duas coisas ao mesmo tempo. Deus existe; disso vocês não podem duvidar, é o essencial. Não vão além; não se percam num labirinto do qual não conseguiriam sair — isso não os tornaria melhores, mas talvez um pouco mais orgulhosos, por pensarem que sabem, quando na realidade nada saberiam.",
+          "comentario": ""
+        },
+        {
+          "numero": 14,
+          "pergunta": "Aguardando verificação",
+          "resposta": "TEXTO A INSERIR — pergunta ainda sendo cotejada com a fonte francesa antes de publicar, para não arriscar uma tradução imprecisa.",
+          "comentario": ""
+        },
+        {
+          "numero": 15,
+          "pergunta": "Que pensar da opinião segundo a qual todos os corpos da natureza, todos os seres, todos os globos do universo seriam partes da Divindade, e constituiriam, em seu conjunto, a própria Divindade — ou seja, a doutrina panteísta?",
+          "resposta": "TEXTO A INSERIR — pergunta identificada, resposta ainda sendo verificada contra a fonte francesa antes de publicar.",
+          "comentario": ""
+        },
+        {
+          "numero": 16,
+          "pergunta": "Aguardando verificação",
+          "resposta": "TEXTO A INSERIR — pergunta ainda sendo cotejada com a fonte francesa antes de publicar, para não arriscar uma tradução imprecisa.",
           "comentario": ""
         }
       ]
     },
     {
       "numero": 2,
-      "titulo": "Elementos gerais do Universo",
+      "parte": "Parte Primeira — Das causas primárias",
+      "titulo": "Dos elementos gerais do Universo",
       "questoes": [
         {
-          "numero": 27,
-          "pergunta": "O que se deve entender por matéria?",
-          "resposta": "A matéria é o liame que prende o espírito, o instrumento de que ele se serve e sobre o qual, ao mesmo tempo, ele atua.",
+          "numero": 0,
+          "pergunta": "Aguardando conteúdo",
+          "resposta": "TEXTO A INSERIR — capítulo aguardando o conteúdo integral. Substitua pelas perguntas e respostas originais, a partir de uma fonte à qual você tenha direito de uso.",
+          "comentario": ""
+        }
+      ]
+    },
+    {
+      "numero": 3,
+      "parte": "Parte Primeira — Das causas primárias",
+      "titulo": "Da criação",
+      "questoes": [
+        {
+          "numero": 0,
+          "pergunta": "Aguardando conteúdo",
+          "resposta": "TEXTO A INSERIR — capítulo aguardando o conteúdo integral. Substitua pelas perguntas e respostas originais, a partir de uma fonte à qual você tenha direito de uso.",
+          "comentario": ""
+        }
+      ]
+    },
+    {
+      "numero": 4,
+      "parte": "Parte Primeira — Das causas primárias",
+      "titulo": "Do princípio vital",
+      "questoes": [
+        {
+          "numero": 0,
+          "pergunta": "Aguardando conteúdo",
+          "resposta": "TEXTO A INSERIR — capítulo aguardando o conteúdo integral. Substitua pelas perguntas e respostas originais, a partir de uma fonte à qual você tenha direito de uso.",
+          "comentario": ""
+        }
+      ]
+    },
+    {
+      "numero": 5,
+      "parte": "Parte Segunda — Do mundo espírita ou mundo dos Espíritos",
+      "titulo": "Dos Espíritos",
+      "questoes": [
+        {
+          "numero": 0,
+          "pergunta": "Aguardando conteúdo",
+          "resposta": "TEXTO A INSERIR — capítulo aguardando o conteúdo integral. Substitua pelas perguntas e respostas originais, a partir de uma fonte à qual você tenha direito de uso.",
+          "comentario": ""
+        }
+      ]
+    },
+    {
+      "numero": 6,
+      "parte": "Parte Segunda — Do mundo espírita ou mundo dos Espíritos",
+      "titulo": "Da encarnação dos Espíritos",
+      "questoes": [
+        {
+          "numero": 0,
+          "pergunta": "Aguardando conteúdo",
+          "resposta": "TEXTO A INSERIR — capítulo aguardando o conteúdo integral. Substitua pelas perguntas e respostas originais, a partir de uma fonte à qual você tenha direito de uso.",
+          "comentario": ""
+        }
+      ]
+    },
+    {
+      "numero": 7,
+      "parte": "Parte Segunda — Do mundo espírita ou mundo dos Espíritos",
+      "titulo": "Da volta do Espírito, extinta a vida corpórea, à vida espiritual",
+      "questoes": [
+        {
+          "numero": 0,
+          "pergunta": "Aguardando conteúdo",
+          "resposta": "TEXTO A INSERIR — capítulo aguardando o conteúdo integral. Substitua pelas perguntas e respostas originais, a partir de uma fonte à qual você tenha direito de uso.",
+          "comentario": ""
+        }
+      ]
+    },
+    {
+      "numero": 8,
+      "parte": "Parte Segunda — Do mundo espírita ou mundo dos Espíritos",
+      "titulo": "Da pluralidade das existências",
+      "questoes": [
+        {
+          "numero": 0,
+          "pergunta": "Aguardando conteúdo",
+          "resposta": "TEXTO A INSERIR — capítulo aguardando o conteúdo integral. Substitua pelas perguntas e respostas originais, a partir de uma fonte à qual você tenha direito de uso.",
+          "comentario": ""
+        }
+      ]
+    },
+    {
+      "numero": 9,
+      "parte": "Parte Segunda — Do mundo espírita ou mundo dos Espíritos",
+      "titulo": "Considerações sobre a pluralidade das existências",
+      "questoes": [
+        {
+          "numero": 0,
+          "pergunta": "Aguardando conteúdo",
+          "resposta": "TEXTO A INSERIR — capítulo aguardando o conteúdo integral. Substitua pelas perguntas e respostas originais, a partir de uma fonte à qual você tenha direito de uso.",
+          "comentario": ""
+        }
+      ]
+    },
+    {
+      "numero": 10,
+      "parte": "Parte Segunda — Do mundo espírita ou mundo dos Espíritos",
+      "titulo": "Da vida espírita",
+      "questoes": [
+        {
+          "numero": 0,
+          "pergunta": "Aguardando conteúdo",
+          "resposta": "TEXTO A INSERIR — capítulo aguardando o conteúdo integral. Substitua pelas perguntas e respostas originais, a partir de uma fonte à qual você tenha direito de uso.",
+          "comentario": ""
+        }
+      ]
+    },
+    {
+      "numero": 11,
+      "parte": "Parte Segunda — Do mundo espírita ou mundo dos Espíritos",
+      "titulo": "Da volta do Espírito à vida corporal",
+      "questoes": [
+        {
+          "numero": 0,
+          "pergunta": "Aguardando conteúdo",
+          "resposta": "TEXTO A INSERIR — capítulo aguardando o conteúdo integral. Substitua pelas perguntas e respostas originais, a partir de uma fonte à qual você tenha direito de uso.",
+          "comentario": ""
+        }
+      ]
+    },
+    {
+      "numero": 12,
+      "parte": "Parte Segunda — Do mundo espírita ou mundo dos Espíritos",
+      "titulo": "Da emancipação da alma",
+      "questoes": [
+        {
+          "numero": 0,
+          "pergunta": "Aguardando conteúdo",
+          "resposta": "TEXTO A INSERIR — capítulo aguardando o conteúdo integral. Substitua pelas perguntas e respostas originais, a partir de uma fonte à qual você tenha direito de uso.",
+          "comentario": ""
+        }
+      ]
+    },
+    {
+      "numero": 13,
+      "parte": "Parte Segunda — Do mundo espírita ou mundo dos Espíritos",
+      "titulo": "Da intervenção dos Espíritos no mundo corporal",
+      "questoes": [
+        {
+          "numero": 0,
+          "pergunta": "Aguardando conteúdo",
+          "resposta": "TEXTO A INSERIR — capítulo aguardando o conteúdo integral. Substitua pelas perguntas e respostas originais, a partir de uma fonte à qual você tenha direito de uso.",
+          "comentario": ""
+        }
+      ]
+    },
+    {
+      "numero": 14,
+      "parte": "Parte Segunda — Do mundo espírita ou mundo dos Espíritos",
+      "titulo": "Das ocupações e missões dos Espíritos",
+      "questoes": [
+        {
+          "numero": 0,
+          "pergunta": "Aguardando conteúdo",
+          "resposta": "TEXTO A INSERIR — capítulo aguardando o conteúdo integral. Substitua pelas perguntas e respostas originais, a partir de uma fonte à qual você tenha direito de uso.",
+          "comentario": ""
+        }
+      ]
+    },
+    {
+      "numero": 15,
+      "parte": "Parte Segunda — Do mundo espírita ou mundo dos Espíritos",
+      "titulo": "Dos três reinos",
+      "questoes": [
+        {
+          "numero": 0,
+          "pergunta": "Aguardando conteúdo",
+          "resposta": "TEXTO A INSERIR — capítulo aguardando o conteúdo integral. Substitua pelas perguntas e respostas originais, a partir de uma fonte à qual você tenha direito de uso.",
+          "comentario": ""
+        }
+      ]
+    },
+    {
+      "numero": 16,
+      "parte": "Parte Terceira — Das leis morais",
+      "titulo": "Da lei divina ou natural",
+      "questoes": [
+        {
+          "numero": 0,
+          "pergunta": "Aguardando conteúdo",
+          "resposta": "TEXTO A INSERIR — capítulo aguardando o conteúdo integral. Substitua pelas perguntas e respostas originais, a partir de uma fonte à qual você tenha direito de uso.",
+          "comentario": ""
+        }
+      ]
+    },
+    {
+      "numero": 17,
+      "parte": "Parte Terceira — Das leis morais",
+      "titulo": "Da lei de adoração",
+      "questoes": [
+        {
+          "numero": 0,
+          "pergunta": "Aguardando conteúdo",
+          "resposta": "TEXTO A INSERIR — capítulo aguardando o conteúdo integral. Substitua pelas perguntas e respostas originais, a partir de uma fonte à qual você tenha direito de uso.",
+          "comentario": ""
+        }
+      ]
+    },
+    {
+      "numero": 18,
+      "parte": "Parte Terceira — Das leis morais",
+      "titulo": "Da lei do trabalho",
+      "questoes": [
+        {
+          "numero": 0,
+          "pergunta": "Aguardando conteúdo",
+          "resposta": "TEXTO A INSERIR — capítulo aguardando o conteúdo integral. Substitua pelas perguntas e respostas originais, a partir de uma fonte à qual você tenha direito de uso.",
+          "comentario": ""
+        }
+      ]
+    },
+    {
+      "numero": 19,
+      "parte": "Parte Terceira — Das leis morais",
+      "titulo": "Da lei de reprodução",
+      "questoes": [
+        {
+          "numero": 0,
+          "pergunta": "Aguardando conteúdo",
+          "resposta": "TEXTO A INSERIR — capítulo aguardando o conteúdo integral. Substitua pelas perguntas e respostas originais, a partir de uma fonte à qual você tenha direito de uso.",
+          "comentario": ""
+        }
+      ]
+    },
+    {
+      "numero": 20,
+      "parte": "Parte Terceira — Das leis morais",
+      "titulo": "Da lei de conservação",
+      "questoes": [
+        {
+          "numero": 0,
+          "pergunta": "Aguardando conteúdo",
+          "resposta": "TEXTO A INSERIR — capítulo aguardando o conteúdo integral. Substitua pelas perguntas e respostas originais, a partir de uma fonte à qual você tenha direito de uso.",
+          "comentario": ""
+        }
+      ]
+    },
+    {
+      "numero": 21,
+      "parte": "Parte Terceira — Das leis morais",
+      "titulo": "Da lei de destruição",
+      "questoes": [
+        {
+          "numero": 0,
+          "pergunta": "Aguardando conteúdo",
+          "resposta": "TEXTO A INSERIR — capítulo aguardando o conteúdo integral. Substitua pelas perguntas e respostas originais, a partir de uma fonte à qual você tenha direito de uso.",
+          "comentario": ""
+        }
+      ]
+    },
+    {
+      "numero": 22,
+      "parte": "Parte Terceira — Das leis morais",
+      "titulo": "Da lei de sociedade",
+      "questoes": [
+        {
+          "numero": 0,
+          "pergunta": "Aguardando conteúdo",
+          "resposta": "TEXTO A INSERIR — capítulo aguardando o conteúdo integral. Substitua pelas perguntas e respostas originais, a partir de uma fonte à qual você tenha direito de uso.",
+          "comentario": ""
+        }
+      ]
+    },
+    {
+      "numero": 23,
+      "parte": "Parte Terceira — Das leis morais",
+      "titulo": "Da lei do progresso",
+      "questoes": [
+        {
+          "numero": 0,
+          "pergunta": "Aguardando conteúdo",
+          "resposta": "TEXTO A INSERIR — capítulo aguardando o conteúdo integral. Substitua pelas perguntas e respostas originais, a partir de uma fonte à qual você tenha direito de uso.",
+          "comentario": ""
+        }
+      ]
+    },
+    {
+      "numero": 24,
+      "parte": "Parte Terceira — Das leis morais",
+      "titulo": "Da lei de igualdade",
+      "questoes": [
+        {
+          "numero": 0,
+          "pergunta": "Aguardando conteúdo",
+          "resposta": "TEXTO A INSERIR — capítulo aguardando o conteúdo integral. Substitua pelas perguntas e respostas originais, a partir de uma fonte à qual você tenha direito de uso.",
+          "comentario": ""
+        }
+      ]
+    },
+    {
+      "numero": 25,
+      "parte": "Parte Terceira — Das leis morais",
+      "titulo": "Da lei de liberdade",
+      "questoes": [
+        {
+          "numero": 0,
+          "pergunta": "Aguardando conteúdo",
+          "resposta": "TEXTO A INSERIR — capítulo aguardando o conteúdo integral. Substitua pelas perguntas e respostas originais, a partir de uma fonte à qual você tenha direito de uso.",
+          "comentario": ""
+        }
+      ]
+    },
+    {
+      "numero": 26,
+      "parte": "Parte Terceira — Das leis morais",
+      "titulo": "Da lei de justiça, de amor e de caridade",
+      "questoes": [
+        {
+          "numero": 0,
+          "pergunta": "Aguardando conteúdo",
+          "resposta": "TEXTO A INSERIR — capítulo aguardando o conteúdo integral. Substitua pelas perguntas e respostas originais, a partir de uma fonte à qual você tenha direito de uso.",
+          "comentario": ""
+        }
+      ]
+    },
+    {
+      "numero": 27,
+      "parte": "Parte Terceira — Das leis morais",
+      "titulo": "Da perfeição moral",
+      "questoes": [
+        {
+          "numero": 0,
+          "pergunta": "Aguardando conteúdo",
+          "resposta": "TEXTO A INSERIR — capítulo aguardando o conteúdo integral. Substitua pelas perguntas e respostas originais, a partir de uma fonte à qual você tenha direito de uso.",
+          "comentario": ""
+        }
+      ]
+    },
+    {
+      "numero": 28,
+      "parte": "Parte Quarta — Das esperanças e consolações",
+      "titulo": "Das penas e gozos terrestres",
+      "questoes": [
+        {
+          "numero": 0,
+          "pergunta": "Aguardando conteúdo",
+          "resposta": "TEXTO A INSERIR — capítulo aguardando o conteúdo integral. Substitua pelas perguntas e respostas originais, a partir de uma fonte à qual você tenha direito de uso.",
+          "comentario": ""
+        }
+      ]
+    },
+    {
+      "numero": 29,
+      "parte": "Parte Quarta — Das esperanças e consolações",
+      "titulo": "Das penas e gozos futuros",
+      "questoes": [
+        {
+          "numero": 0,
+          "pergunta": "Aguardando conteúdo",
+          "resposta": "TEXTO A INSERIR — capítulo aguardando o conteúdo integral. Substitua pelas perguntas e respostas originais, a partir de uma fonte à qual você tenha direito de uso.",
           "comentario": ""
         }
       ]
