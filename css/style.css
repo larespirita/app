@@ -1,27 +1,30 @@
 :root {
-  /* Paleta: noite de reunião (índigo profundo) + luz de vela (âmbar) + papel antigo (pergaminho) */
-  --ink-night: #12213B;
-  --ink-night-deep: #0B1526;
-  --candle-gold: #E3A94C;
-  --candle-gold-soft: #F0C97D;
-  --parchment: #F6EFE1;
-  --parchment-dim: #EAE0CC;
+  /* Paleta extraída do logo: noite profunda + dourado de vela + pergaminho */
+  --ink-night: #101E36;
+  --ink-night-deep: #060D1B;
+  --ink-night-soft: #16294A;
+  --gold-deep: #6E4F22;
+  --gold: #C79A45;
+  --gold-soft: #E8C078;
+  --gold-shine: #FFEDB2;
+  --parchment: #FBF7EC;
+  --parchment-dim: #EEE6D4;
   --sage: #6E8F72;
   --text-main: #1D2430;
   --text-soft: #5B6472;
   --text-inverse: #F6EFE1;
   --danger: #B0503D;
 
-  --radius: 14px;
-  --shadow-soft: 0 8px 24px rgba(18, 33, 59, 0.12);
+  --radius: 18px;
+  --radius-sm: 12px;
+  --shadow-soft: 0 10px 30px rgba(10, 21, 38, 0.10);
+  --shadow-gold: 0 10px 26px rgba(199, 154, 69, 0.28);
+  --shadow-deep: 0 20px 50px rgba(6, 13, 27, 0.35);
 
   --font-display: "Fraunces", "Iowan Old Style", serif;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-}
 
-@font-face {
-  font-family: "Fraunces";
-  src: local("Fraunces");
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 * { box-sizing: border-box; }
@@ -30,7 +33,6 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background: var(--parchment);
   color: var(--text-main);
   font-family: var(--font-body);
   -webkit-tap-highlight-color: transparent;
@@ -40,38 +42,126 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  position: relative;
+  isolation: isolate;
+
+  background-color: var(--parchment);
+  background-image:
+    linear-gradient(180deg, rgba(251, 247, 236, 0.94), rgba(251, 247, 236, 0.88)),
+    url("../assets/fundo.jpg");
+  background-repeat: no-repeat, repeat;
+  background-size: cover, 190px 190px;
+  background-position: center, center;
+  background-attachment: fixed, fixed;
+  animation: bg-drift 60s linear infinite;
+}
+
+@keyframes bg-drift {
+  from { background-position: center, 0 0; }
+  to   { background-position: center, 190px 190px; }
+}
+
+.bg-glow {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(480px 320px at 12% -6%, rgba(199, 154, 69, 0.16), transparent 70%),
+    radial-gradient(420px 300px at 108% 18%, rgba(16, 30, 54, 0.10), transparent 70%);
 }
 
 a { color: inherit; text-decoration: none; }
 
-/* ---------- Cabeçalho ---------- */
+::selection { background: rgba(199, 154, 69, 0.35); }
+
+/* ---------- Cabecalho ---------- */
 
 header.app-header {
-  background: linear-gradient(180deg, var(--ink-night) 0%, var(--ink-night-deep) 100%);
+  background:
+    radial-gradient(120% 160% at 0% 0%, rgba(199, 154, 69, 0.12), transparent 55%),
+    linear-gradient(165deg, var(--ink-night) 0%, var(--ink-night-deep) 100%);
   color: var(--text-inverse);
-  padding: 22px 20px 26px;
+  padding: 24px 20px 30px;
   position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-deep);
+  border-bottom: 1px solid rgba(232, 192, 120, 0.18);
+}
+
+.header-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
   overflow: hidden;
 }
 
-header.app-header::after {
-  /* glow de vela — elemento assinatura */
+.header-glow::before,
+.header-glow::after {
   content: "";
   position: absolute;
-  width: 220px;
-  height: 220px;
-  right: -60px;
-  top: -90px;
-  background: radial-gradient(circle, rgba(227, 169, 76, 0.35) 0%, rgba(227, 169, 76, 0) 70%);
-  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(6px);
+}
+
+.header-glow::before {
+  width: 240px;
+  height: 240px;
+  right: -70px;
+  top: -110px;
+  background: radial-gradient(circle, rgba(199, 154, 69, 0.38) 0%, rgba(199, 154, 69, 0) 70%);
+  animation: glow-float 9s ease-in-out infinite;
+}
+
+.header-glow::after {
+  width: 160px;
+  height: 160px;
+  left: -50px;
+  bottom: -80px;
+  background: radial-gradient(circle, rgba(232, 192, 120, 0.22) 0%, rgba(232, 192, 120, 0) 70%);
+  animation: glow-float 11s ease-in-out infinite reverse;
+}
+
+@keyframes glow-float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-12px, 14px) scale(1.08); }
+}
+
+.header-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.header-logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 6px;
+  filter: drop-shadow(0 0 14px rgba(199, 154, 69, 0.55));
+  animation: logo-pulse 4.5s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes logo-pulse {
+  0%, 100% { filter: drop-shadow(0 0 10px rgba(199, 154, 69, 0.45)); }
+  50% { filter: drop-shadow(0 0 20px rgba(199, 154, 69, 0.75)); }
 }
 
 header.app-header h1 {
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1.5rem;
   margin: 0;
   letter-spacing: 0.2px;
+  background: linear-gradient(100deg, var(--gold-shine) 0%, var(--gold-soft) 45%, var(--text-inverse) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 header.app-header p {
@@ -80,122 +170,179 @@ header.app-header p {
   color: rgba(246, 239, 225, 0.72);
 }
 
-/* ---------- Conteúdo ---------- */
+/* ---------- Conteudo ---------- */
 
 main {
   flex: 1;
-  padding: 20px 18px 100px;
+  padding: 22px 18px 108px;
   max-width: 640px;
   width: 100%;
   margin: 0 auto;
 }
 
 .view { display: none; }
-.view.active { display: block; animation: fade-in 0.25s ease; }
+.view.active { display: block; animation: fade-in 0.4s var(--ease-out); }
 
 @keyframes fade-in {
-  from { opacity: 0; transform: translateY(4px); }
+  from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 .section-eyebrow {
   font-size: 0.72rem;
   text-transform: uppercase;
-  letter-spacing: 1.4px;
-  color: var(--sage);
-  font-weight: 600;
-  margin: 0 0 6px;
+  letter-spacing: 1.6px;
+  color: var(--gold-deep);
+  font-weight: 700;
+  margin: 0 0 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-eyebrow::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(199, 154, 69, 0.5), transparent);
 }
 
 .section-title {
   font-family: var(--font-display);
-  font-size: 1.3rem;
-  margin: 0 0 14px;
+  font-weight: 700;
+  font-size: 1.35rem;
+  margin: 0 0 16px;
   color: var(--ink-night);
 }
 
-/* ---------- Cartão do Evangelho no Lar ---------- */
+/* ---------- Cartao do Evangelho no Lar ---------- */
 
 .meet-card {
-  background: linear-gradient(155deg, var(--ink-night) 0%, var(--ink-night-deep) 100%);
+  background:
+    radial-gradient(140% 160% at 100% 0%, rgba(199, 154, 69, 0.14), transparent 55%),
+    linear-gradient(155deg, var(--ink-night) 0%, var(--ink-night-deep) 100%);
   border-radius: var(--radius);
-  padding: 24px 22px;
+  padding: 26px 24px;
   color: var(--text-inverse);
-  box-shadow: var(--shadow-soft);
+  box-shadow: var(--shadow-deep);
+  border: 1px solid rgba(232, 192, 120, 0.16);
   position: relative;
   overflow: hidden;
-  margin-bottom: 24px;
+  margin-bottom: 26px;
+  animation: card-in 0.5s var(--ease-out) both;
 }
 
 .meet-card::before {
   content: "";
   position: absolute;
-  width: 160px;
-  height: 160px;
+  width: 180px;
+  height: 180px;
   left: -50px;
-  bottom: -60px;
-  background: radial-gradient(circle, rgba(227, 169, 76, 0.28) 0%, rgba(227, 169, 76, 0) 70%);
+  bottom: -70px;
+  background: radial-gradient(circle, rgba(199, 154, 69, 0.30) 0%, rgba(199, 154, 69, 0) 70%);
+  animation: glow-float 10s ease-in-out infinite;
 }
 
 .meet-card h2 {
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1.18rem;
   margin: 0 0 6px;
-  font-weight: 600;
+  font-weight: 700;
+  position: relative;
 }
 
 .meet-card p {
-  margin: 0 0 18px;
+  margin: 0 0 20px;
   font-size: 0.88rem;
   color: rgba(246, 239, 225, 0.75);
-  line-height: 1.5;
+  line-height: 1.55;
+  position: relative;
 }
 
 .btn-enter {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--candle-gold);
+  background: linear-gradient(120deg, var(--gold-soft), var(--gold) 55%, var(--gold-deep));
   color: var(--ink-night-deep);
   font-weight: 700;
   font-size: 0.92rem;
-  padding: 12px 20px;
+  padding: 13px 22px;
   border-radius: 999px;
   border: none;
   cursor: pointer;
-  transition: transform 0.15s ease, background 0.15s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-gold);
+  transition: transform 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
 }
 
-.btn-enter:hover { background: var(--candle-gold-soft); transform: translateY(-1px); }
+.btn-enter::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  transform: skewX(-20deg);
+  animation: shine-sweep 3.2s ease-in-out infinite;
+}
+
+@keyframes shine-sweep {
+  0% { left: -60%; }
+  35%, 100% { left: 140%; }
+}
+
+.btn-enter:hover { transform: translateY(-2px); box-shadow: 0 14px 32px rgba(199, 154, 69, 0.4); }
 .btn-enter:active { transform: translateY(0); }
 
-/* ---------- Cartões de livro ---------- */
+/* ---------- Cartoes de livro ---------- */
 
 .book-grid {
   display: grid;
   gap: 14px;
-  margin-bottom: 28px;
+  margin-bottom: 30px;
 }
 
 .book-card {
-  background: #fff;
-  border: 1px solid var(--parchment-dim);
+  background: rgba(255, 255, 255, 0.68);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(232, 192, 120, 0.35);
   border-radius: var(--radius);
-  padding: 18px;
+  padding: 18px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  transition: border-color 0.15s ease, transform 0.15s ease;
+  box-shadow: var(--shadow-soft);
+  transition: border-color 0.2s var(--ease-out), transform 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
+  animation: card-in 0.5s var(--ease-out) both;
 }
 
-.book-card:hover { border-color: var(--candle-gold); transform: translateY(-1px); }
+.book-grid .book-card:nth-child(1) { animation-delay: 0.03s; }
+.book-grid .book-card:nth-child(2) { animation-delay: 0.09s; }
+.book-grid .book-card:nth-child(3) { animation-delay: 0.15s; }
+.book-grid .book-card:nth-child(4) { animation-delay: 0.21s; }
+
+@keyframes card-in {
+  from { opacity: 0; transform: translateY(14px) scale(0.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.book-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-gold);
+}
 
 .book-card h3 {
   font-family: var(--font-display);
-  font-size: 1.02rem;
+  font-size: 1.04rem;
   margin: 0 0 4px;
   color: var(--ink-night);
+  font-weight: 600;
 }
 
 .book-card span.meta {
@@ -205,35 +352,45 @@ main {
 
 .progress-pill {
   font-size: 0.72rem;
-  font-weight: 600;
-  color: var(--sage);
-  background: rgba(110, 143, 114, 0.12);
-  padding: 4px 10px;
+  font-weight: 700;
+  color: var(--gold-deep);
+  background: linear-gradient(120deg, rgba(199, 154, 69, 0.18), rgba(199, 154, 69, 0.08));
+  border: 1px solid rgba(199, 154, 69, 0.25);
+  padding: 5px 12px;
   border-radius: 999px;
   white-space: nowrap;
 }
 
-/* ---------- Lista de capítulos ---------- */
+/* ---------- Lista de capitulos ---------- */
 
 .chapter-list { display: grid; gap: 10px; }
 
 .chapter-item {
-  background: #fff;
-  border: 1px solid var(--parchment-dim);
-  border-radius: 10px;
-  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.68);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(232, 192, 120, 0.3);
+  border-radius: var(--radius-sm);
+  padding: 15px 18px;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: var(--shadow-soft);
+  transition: border-color 0.2s var(--ease-out), transform 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
+  animation: card-in 0.4s var(--ease-out) both;
 }
 
-.chapter-item:hover { border-color: var(--candle-gold); }
+.chapter-item:hover {
+  border-color: var(--gold);
+  transform: translateX(3px);
+  box-shadow: var(--shadow-gold);
+}
 
 .chapter-item .num {
   font-family: var(--font-display);
-  color: var(--candle-gold);
-  font-weight: 600;
+  color: var(--gold-deep);
+  font-weight: 700;
   margin-right: 10px;
 }
 
@@ -243,23 +400,31 @@ main {
   gap: 6px;
   font-size: 0.85rem;
   color: var(--text-soft);
-  margin-bottom: 14px;
+  margin-bottom: 16px;
   cursor: pointer;
+  transition: color 0.2s var(--ease-out), transform 0.2s var(--ease-out);
 }
+
+.back-link:hover { color: var(--gold-deep); transform: translateX(-2px); }
 
 /* ---------- Leitura ---------- */
 
 .reading-block {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-radius: var(--radius);
-  padding: 20px;
+  padding: 22px;
   margin-bottom: 14px;
-  border: 1px solid var(--parchment-dim);
+  border: 1px solid rgba(232, 192, 120, 0.3);
+  box-shadow: var(--shadow-soft);
+  animation: card-in 0.45s var(--ease-out) both;
 }
 
 .reading-block .question {
   font-family: var(--font-display);
-  font-size: 1.05rem;
+  font-weight: 600;
+  font-size: 1.06rem;
   color: var(--ink-night);
   margin: 0 0 10px;
   line-height: 1.45;
@@ -267,14 +432,14 @@ main {
 
 .reading-block .answer {
   font-size: 0.94rem;
-  line-height: 1.6;
+  line-height: 1.65;
   color: var(--text-main);
 }
 
 .reading-block .comment {
-  margin-top: 10px;
-  padding-top: 10px;
-  border-top: 1px dashed var(--parchment-dim);
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(199, 154, 69, 0.35);
   font-size: 0.86rem;
   color: var(--text-soft);
   font-style: italic;
@@ -282,25 +447,46 @@ main {
 
 .reading-block .paragraph {
   font-size: 0.95rem;
-  line-height: 1.7;
+  line-height: 1.75;
   color: var(--text-main);
   margin: 0 0 12px;
 }
 
-/* ---------- Navegação inferior ---------- */
+/* ---------- Navegacao inferior ---------- */
 
 nav.tab-bar {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  background: #fff;
-  border-top: 1px solid var(--parchment-dim);
+  background: rgba(251, 247, 236, 0.82);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border-top: 1px solid rgba(232, 192, 120, 0.35);
+  box-shadow: 0 -8px 24px rgba(10, 21, 38, 0.08);
   display: flex;
   justify-content: space-around;
   padding: 8px 0 calc(8px + env(safe-area-inset-bottom));
   z-index: 10;
 }
+
+.tab-indicator {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  width: calc(100% / 3);
+  height: calc(100% - 12px);
+  background: linear-gradient(160deg, rgba(199, 154, 69, 0.16), rgba(199, 154, 69, 0.05));
+  border: 1px solid rgba(199, 154, 69, 0.28);
+  border-radius: 14px;
+  transition: transform 0.35s var(--ease-out);
+  pointer-events: none;
+  z-index: 0;
+}
+
+nav.tab-bar[data-active="inicio"] .tab-indicator { transform: translateX(0%); }
+nav.tab-bar[data-active="evangelho"] .tab-indicator { transform: translateX(100%); }
+nav.tab-bar[data-active="estudos"] .tab-indicator { transform: translateX(200%); }
 
 nav.tab-bar button {
   background: none;
@@ -308,19 +494,27 @@ nav.tab-bar button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3px;
+  gap: 4px;
   color: var(--text-soft);
   font-size: 0.68rem;
   font-family: var(--font-body);
   font-weight: 600;
-  padding: 6px 14px;
+  padding: 8px 16px;
   cursor: pointer;
+  position: relative;
+  z-index: 1;
+  transition: color 0.2s var(--ease-out);
 }
 
-nav.tab-bar button.active { color: var(--candle-gold); }
-nav.tab-bar button svg { width: 22px; height: 22px; }
+nav.tab-bar button.active { color: var(--gold-deep); }
+nav.tab-bar button svg {
+  width: 22px;
+  height: 22px;
+  transition: transform 0.25s var(--ease-out);
+}
+nav.tab-bar button.active svg { transform: translateY(-1px) scale(1.08); }
 
-/* ---------- Utilitários ---------- */
+/* ---------- Utilitarios ---------- */
 
 .empty-state {
   text-align: center;
@@ -330,5 +524,18 @@ nav.tab-bar button svg { width: 22px; height: 22px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .view.active { animation: none; }
+  .view.active,
+  .book-card,
+  .chapter-item,
+  .reading-block,
+  .meet-card,
+  header.app-header,
+  .header-logo,
+  .header-glow::before,
+  .header-glow::after,
+  .meet-card::before,
+  .btn-enter::after,
+  body {
+    animation: none !important;
+  }
 }
