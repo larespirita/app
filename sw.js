@@ -1,5 +1,5 @@
 // Lembre de subir esta versão a cada deploy para invalidar o cache antigo.
-const CACHE_NAME = "lar-espirita-static-v1";
+const CACHE_NAME = "lar-espirita-static-v2";
 const CACHE_STATIC = [
   "/",
   "/index.html",
@@ -9,8 +9,10 @@ const CACHE_STATIC = [
   "/js/meet-config.js",
   "/data/livro-dos-espiritos.json",
   "/data/evangelho-segundo-espiritismo.json",
-  "/icons/icon-192.png",
-  "/icons/icon-512.png"
+  "/assets/logo.png",
+  "/assets/logo.ico",
+  "/assets/fundo.jpg",
+  "/assets/maskable-icon512.png"
 ];
 
 self.addEventListener("install", event => {

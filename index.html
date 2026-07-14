@@ -4,19 +4,28 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Lar Espírita</title>
-<meta name="theme-color" content="#12213B">
+<meta name="theme-color" content="#0A1526">
 <link rel="manifest" href="manifest.json">
-<link rel="icon" href="icons/icon-192.png">
+<link rel="icon" href="assets/logo.ico">
+<link rel="apple-touch-icon" href="assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+<div class="bg-glow" aria-hidden="true"></div>
+
 <header class="app-header">
-  <h1>Lar Espírita</h1>
-  <p id="greeting">Evangelho e estudo em família</p>
+  <div class="header-glow" aria-hidden="true"></div>
+  <div class="header-content">
+    <img src="assets/logo.png" alt="Lar Espírita" class="header-logo">
+    <div class="header-text">
+      <h1>Lar Espírita</h1>
+      <p id="greeting">Evangelho e estudo em família</p>
+    </div>
+  </div>
 </header>
 
 <main>
@@ -79,7 +88,8 @@
 
 </main>
 
-<nav class="tab-bar">
+<nav class="tab-bar" data-active="inicio">
+  <span class="tab-indicator" aria-hidden="true"></span>
   <button data-view="inicio" class="active">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>
     Início
