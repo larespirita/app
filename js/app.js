@@ -20,6 +20,11 @@ function showView(name) {
   document.querySelectorAll("nav.tab-bar button").forEach(b => {
     b.classList.toggle("active", b.dataset.view === name);
   });
+
+  const nav = document.querySelector("nav.tab-bar");
+  if (nav) nav.dataset.active = name;
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 document.querySelectorAll("nav.tab-bar button").forEach(btn => {
