@@ -1,5 +1,5 @@
 // Lembre de subir esta versão a cada deploy para invalidar o cache antigo.
-const CACHE_NAME = "lar-espirita-static-v6";
+const CACHE_NAME = "lar-espirita-static-v8";
 const CACHE_STATIC = [
   "/",
   "/index.html",
