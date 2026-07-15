@@ -38,15 +38,6 @@ function enterMeet() {
 document.getElementById("btn-enter-inicio").addEventListener("click", enterMeet);
 document.getElementById("btn-enter-evangelho").addEventListener("click", enterMeet);
 
-// ---------- Saudação por horário ----------
-(function greet() {
-  const h = new Date().getHours();
-  const el = document.getElementById("greeting");
-  if (h < 12) el.textContent = "Bom dia. Que a paz esteja em seu lar.";
-  else if (h < 18) el.textContent = "Boa tarde. Que a paz esteja em seu lar.";
-  else el.textContent = "Boa noite. Hora de reunir a família.";
-})();
-
 // ---------- Progresso (localStorage) ----------
 function getProgress() {
   try {
