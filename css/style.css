@@ -57,6 +57,7 @@ body {
   background-size: 190px 190px;
   background-position: 0 0;
   opacity: 1;
+  filter: contrast(1.9) saturate(1.15);
   animation: bg-drift 60s linear infinite;
 }
 
