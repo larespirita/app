@@ -57,7 +57,7 @@ body {
   background-size: 190px 190px;
   background-position: 0 0;
   opacity: 1;
-  filter: contrast(1.9) saturate(1.15);
+  filter: contrast(2.6) saturate(1.2) brightness(0.97);
   animation: bg-drift 60s linear infinite;
 }
 
@@ -134,9 +134,9 @@ header.app-header {
 .header-logo {
   display: block;
   width: 100%;
-  aspect-ratio: 1024 / 860;
+  aspect-ratio: 1024 / 925;
   object-fit: cover;
-  object-position: center 53%;
+  object-position: center 54%;
   position: relative;
   z-index: 1;
   filter: drop-shadow(0 2px 18px rgba(199, 154, 69, 0.35));
