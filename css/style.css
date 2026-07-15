@@ -44,21 +44,25 @@ body {
   min-height: 100vh;
   position: relative;
   isolation: isolate;
-
   background-color: var(--parchment);
-  background-image:
-    linear-gradient(180deg, rgba(251, 247, 236, 0.94), rgba(251, 247, 236, 0.88)),
-    url("../assets/fundo.jpg");
-  background-repeat: no-repeat, repeat;
-  background-size: cover, 190px 190px;
-  background-position: center, center;
-  background-attachment: fixed, fixed;
+}
+
+.bg-tile {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-image: url("../assets/fundo.jpg");
+  background-repeat: repeat;
+  background-size: 190px 190px;
+  background-position: 0 0;
+  opacity: 0.5;
   animation: bg-drift 60s linear infinite;
 }
 
 @keyframes bg-drift {
-  from { background-position: center, 0 0; }
-  to   { background-position: center, 190px 190px; }
+  from { background-position: 0 0; }
+  to   { background-position: 190px 190px; }
 }
 
 .bg-glow {
@@ -535,7 +539,7 @@ nav.tab-bar button.active svg { transform: translateY(-1px) scale(1.08); }
   .header-glow::after,
   .meet-card::before,
   .btn-enter::after,
-  body {
+  .bg-tile {
     animation: none !important;
   }
 }
