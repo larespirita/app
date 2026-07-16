@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lar Espírita</title>
+<meta name="theme-color" content="#FAF9F6">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="assets/logo.ico">
+<link rel="apple-touch-icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="app-header">
+  <img src="assets/logo.png" alt="Lar Espírita" class="header-logo">
+  <div class="header-text">
+    <h1>Lar Espírita</h1>
+    <p id="greeting">Bem-vindo</p>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===== INÍCIO ===== -->
+  <section id="view-inicio" class="view active">
+    <p class="section-eyebrow">Hoje</p>
+    <div class="meet-card">
+      <h2>Evangelho no Lar</h2>
+      <p>Reunião de estudo e prece em família, pela sala fixa do Google Meet.</p>
+      <button class="btn-enter" id="btn-enter-inicio">Entrar na reunião →</button>
+    </div>
+
+    <p class="section-eyebrow">Continue estudando</p>
+    <div class="book-grid" id="continue-grid"></div>
+  </section>
+
+  <!-- ===== EVANGELHO NO LAR ===== -->
+  <section id="view-evangelho" class="view">
+    <p class="section-eyebrow">Reunião</p>
+    <h2 class="section-title">Evangelho no Lar</h2>
+
+    <div class="meet-card">
+      <h2>Sala da família</h2>
+      <p>Mesmo link, todas as semanas. Toque para entrar direto no Google Meet.</p>
+      <button class="btn-enter" id="btn-enter-evangelho">Entrar na reunião →</button>
+    </div>
+
+    <div class="reading-block">
+      <p class="question">Roteiro sugerido</p>
+      <div class="answer">
+        <p class="paragraph">1. Prece de abertura</p>
+        <p class="paragraph">2. Leitura de um capítulo do Evangelho Segundo o Espiritismo</p>
+        <p class="paragraph">3. Comentários e reflexão em família</p>
+        <p class="paragraph">4. Prece de encerramento</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ESTUDOS — lista de livros ===== -->
+  <section id="view-estudos" class="view">
+    <p class="section-eyebrow">Biblioteca</p>
+    <h2 class="section-title">Codificação Espírita</h2>
+    <div class="book-grid" id="book-grid"></div>
+  </section>
+
+  <!-- ===== ESTUDOS — capítulos de um livro ===== -->
+  <section id="view-chapters" class="view">
+    <span class="back-link" id="back-to-books">← Voltar aos livros</span>
+    <h2 class="section-title" id="chapters-title">Capítulos</h2>
+    <div class="chapter-list" id="chapter-list"></div>
+  </section>
+
+  <!-- ===== ESTUDOS — leitura de um capítulo ===== -->
+  <section id="view-reading" class="view">
+    <span class="back-link" id="back-to-chapters">← Voltar aos capítulos</span>
+    <h2 class="section-title" id="reading-title">Leitura</h2>
+    <div id="reading-content"></div>
+  </section>
+
+  <!-- ===== COMUNIDADE ===== -->
+  <section id="view-comunidade" class="view">
+    <p class="section-eyebrow">Comunidade</p>
+    <h2 class="section-title">Sua conta</h2>
+
+    <div class="account-card" id="account-card">
+      <div id="signed-out-box">
+        <p class="account-hint">Entre com o Google para criar sua própria sala de reunião e guardar seu histórico.</p>
+        <div id="google-btn-container"></div>
+      </div>
+      <div id="signed-in-box" style="display:none;">
+        <img id="user-avatar" class="user-avatar" alt="">
+        <div class="user-info">
+          <strong id="user-name"></strong>
+          <span id="user-email" class="account-hint"></span>
+        </div>
+        <button class="btn-secondary" id="btn-logout">Sair</button>
+      </div>
+    </div>
+
+    <p class="section-eyebrow">Sua sala</p>
+    <div class="meet-card" id="create-meeting-card">
+      <h2>Criar reunião</h2>
+      <p>Gere sua própria sala de vídeo para o Evangelho no Lar, sem sair do app.</p>
+      <button class="btn-enter" id="btn-create-meeting">Criar sala →</button>
+    </div>
+    <div id="jitsi-container" class="jitsi-container" style="display:none;"></div>
+
+    <p class="section-eyebrow">Tire suas dúvidas</p>
+    <div class="ai-chat">
+      <p class="account-hint">Descreva uma situação da sua vida, ou pergunte algo sobre a doutrina espírita.</p>
+      <div id="ai-messages" class="ai-messages"></div>
+      <div class="ai-input-row">
+        <textarea id="ai-question" class="ai-textarea" rows="2" placeholder="Ex.: Estou passando por um momento difícil no trabalho..."></textarea>
+        <button class="btn-enter" id="btn-ask-ai">Perguntar</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<nav class="tab-bar" data-active="inicio">
+  <span class="tab-indicator" aria-hidden="true"></span>
+  <button data-view="inicio" class="active">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>
+    Início
+  </button>
+  <button data-view="evangelho">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+    Evangelho
+  </button>
+  <button data-view="estudos">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5c3-1.5 6-1.5 8 0v14c-2-1.5-5-1.5-8 0zM20 5c-3-1.5-6-1.5-8 0v14c2-1.5 5-1.5 8 0z"/></svg>
+    Biblioteca
+  </button>
+  <button data-view="comunidade">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 20v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 20v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+    Comunidade
+  </button>
+</nav>
+
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script src="https://meet.jit.si/external_api.js"></script>
+<script src="js/meet-config.js"></script>
+<script src="js/community.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

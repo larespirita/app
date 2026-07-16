@@ -1,0 +1,14 @@
+{
+  "name": "Lar Espírita",
+  "short_name": "Lar Espírita",
+  "description": "Evangelho no Lar e estudos sobre o Espiritismo",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAF9F6",
+  "theme_color": "#FAF9F6",
+  "orientation": "portrait",
+  "icons": [
+    { "src": "assets/logo.png", "sizes": "1024x1024", "type": "image/png" },
+    { "src": "assets/maskable-icon512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
