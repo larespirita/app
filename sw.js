@@ -1,18 +1,20 @@
 // Lembre de subir esta versão a cada deploy para invalidar o cache antigo.
-const CACHE_NAME = "lar-espirita-static-v11";
+const CACHE_NAME = "lar-espirita-static-v12";
 const CACHE_STATIC = [
   "/",
   "/index.html",
   "/manifest.json",
   "/css/style.css",
   "/js/app.js",
+  "/js/library.js",
+  "/js/evangelho.js",
+  "/js/ai.js",
+  "/js/account.js",
   "/js/meet-config.js",
-  "/js/community.js",
   "/data/livro-dos-espiritos.json",
   "/data/evangelho-segundo-espiritismo.json",
   "/assets/logo.png",
   "/assets/logo.ico",
-  "/assets/fundo.jpg",
   "/assets/maskable-icon512.png"
 ];
 
@@ -35,7 +37,7 @@ self.addEventListener("activate", event => {
 self.addEventListener("fetch", event => {
   const { request } = event;
 
-  // Nunca cachear chamadas a APIs (ex.: futuras Cloudflare Functions em /api/*)
+  // Nunca cachear chamadas a APIs (ex.: Cloudflare Worker em /api/*)
   if (request.url.includes("/api/")) return;
 
   // Nunca cachear respostas parciais (Range requests, ex.: áudio/vídeo)

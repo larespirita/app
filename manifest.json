@@ -1,11 +1,11 @@
 {
   "name": "Lar Espírita",
   "short_name": "Lar Espírita",
-  "description": "Evangelho no Lar e estudos sobre o Espiritismo",
+  "description": "Evangelho no Lar, estudos da Doutrina Espírita e um assistente para tirar dúvidas",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#FAF9F6",
-  "theme_color": "#FAF9F6",
+  "background_color": "#0F1729",
+  "theme_color": "#0F1729",
   "orientation": "portrait",
   "icons": [
     { "src": "assets/logo.png", "sizes": "1024x1024", "type": "image/png" },

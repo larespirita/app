@@ -4,148 +4,337 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Lar Espírita</title>
-<meta name="theme-color" content="#FAF9F6">
+<meta name="description" content="Evangelho no Lar, estudos da Doutrina Espírita e um assistente para tirar dúvidas — no seu ritmo.">
+<meta name="theme-color" content="#0F1729">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="assets/logo.ico">
 <link rel="apple-touch-icon" href="assets/logo.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<header class="app-header">
-  <img src="assets/logo.png" alt="Lar Espírita" class="header-logo">
-  <div class="header-text">
-    <h1>Lar Espírita</h1>
-    <p id="greeting">Bem-vindo</p>
-  </div>
-</header>
+<div class="app-shell">
 
-<main>
-
-  <!-- ===== INÍCIO ===== -->
-  <section id="view-inicio" class="view active">
-    <p class="section-eyebrow">Hoje</p>
-    <div class="meet-card">
-      <h2>Evangelho no Lar</h2>
-      <p>Reunião de estudo e prece em família, pela sala fixa do Google Meet.</p>
-      <button class="btn-enter" id="btn-enter-inicio">Entrar na reunião →</button>
+  <!-- ============ Navegação principal ============ -->
+  <nav class="app-nav" aria-label="Navegação principal">
+    <div class="nav-brand">
+      <img src="assets/logo.png" alt="">
+      <span>Lar Espírita</span>
     </div>
 
-    <p class="section-eyebrow">Continue estudando</p>
-    <div class="book-grid" id="continue-grid"></div>
-  </section>
+    <ul class="nav-list">
+      <li><button type="button" class="nav-btn active" data-view="inicio" aria-current="page">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5 12 4l8 7.5"/><path d="M6 10v9a1 1 0 0 0 1 1h3v-6h4v6h3a1 1 0 0 0 1-1v-9"/><path d="M12 4v3"/></svg>
+        <span>Início</span>
+      </button></li>
+      <li><button type="button" class="nav-btn" data-view="estudos">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H11a2 2 0 0 1 2 2v14a1.6 1.6 0 0 0-1.6-1.6H4Z"/><path d="M20 5.5c0-.8-.7-1.5-1.5-1.5H13a2 2 0 0 0-2 2v14a1.6 1.6 0 0 1 1.6-1.6H20Z"/></svg>
+        <span>Estudos</span>
+      </button></li>
+      <li><button type="button" class="nav-btn" data-view="evangelho">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c3-2.2 4-4.3 4-6.6 0-2.4-1.6-4-2.7-5.7C12.4 8.2 12 6.5 12 5c0-1 .4-2 .4-2s-2.2 1-3 3c-.8 2-1 3.3-2.3 4.9C6 12.4 4 14 4 16.3 4 18.7 6.6 20.8 12 22Z"/></svg>
+        <span>Evangelho</span>
+      </button></li>
+      <li><button type="button" class="nav-btn" data-view="ia">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5c.4 1.9 1 3.1 2 4.1 1 1 2.2 1.6 4.1 2-1.9.4-3.1 1-4.1 2-1 1-1.6 2.2-2 4.1-.4-1.9-1-3.1-2-4.1-1-1-2.2-1.6-4.1-2 1.9-.4 3.1-1 4.1-2 1-1 1.6-2.2 2-4.1Z"/><path d="M18.5 15.5c.2 1 .5 1.6 1 2.1.5.5 1.1.8 2.1 1-1 .2-1.6.5-2.1 1-.5.5-.8 1.1-1 2.1-.2-1-.5-1.6-1-2.1-.5-.5-1.1-.8-2.1-1 1-.2 1.6-.5 2.1-1 .5-.5.8-1.1 1-2.1Z"/></svg>
+        <span>Assistente</span>
+      </button></li>
+      <li><button type="button" class="nav-btn" data-view="perfil">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.5" r="3.4"/><path d="M4.8 20c1.1-3.4 3.9-5.3 7.2-5.3s6.1 1.9 7.2 5.3"/></svg>
+        <span>Perfil</span>
+      </button></li>
+    </ul>
 
-  <!-- ===== EVANGELHO NO LAR ===== -->
-  <section id="view-evangelho" class="view">
-    <p class="section-eyebrow">Reunião</p>
-    <h2 class="section-title">Evangelho no Lar</h2>
-
-    <div class="meet-card">
-      <h2>Sala da família</h2>
-      <p>Mesmo link, todas as semanas. Toque para entrar direto no Google Meet.</p>
-      <button class="btn-enter" id="btn-enter-evangelho">Entrar na reunião →</button>
+    <div class="nav-secondary">
+      <button type="button" id="btn-theme-desktop">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z"/></svg>
+        <span id="theme-label-desktop">Modo escuro</span>
+      </button>
     </div>
+  </nav>
 
-    <div class="reading-block">
-      <p class="question">Roteiro sugerido</p>
-      <div class="answer">
-        <p class="paragraph">1. Prece de abertura</p>
-        <p class="paragraph">2. Leitura de um capítulo do Evangelho Segundo o Espiritismo</p>
-        <p class="paragraph">3. Comentários e reflexão em família</p>
-        <p class="paragraph">4. Prece de encerramento</p>
-      </div>
-    </div>
-  </section>
+  <div style="flex:1; display:flex; flex-direction:column; min-width:0;">
 
-  <!-- ===== ESTUDOS — lista de livros ===== -->
-  <section id="view-estudos" class="view">
-    <p class="section-eyebrow">Biblioteca</p>
-    <h2 class="section-title">Codificação Espírita</h2>
-    <div class="book-grid" id="book-grid"></div>
-  </section>
-
-  <!-- ===== ESTUDOS — capítulos de um livro ===== -->
-  <section id="view-chapters" class="view">
-    <span class="back-link" id="back-to-books">← Voltar aos livros</span>
-    <h2 class="section-title" id="chapters-title">Capítulos</h2>
-    <div class="chapter-list" id="chapter-list"></div>
-  </section>
-
-  <!-- ===== ESTUDOS — leitura de um capítulo ===== -->
-  <section id="view-reading" class="view">
-    <span class="back-link" id="back-to-chapters">← Voltar aos capítulos</span>
-    <h2 class="section-title" id="reading-title">Leitura</h2>
-    <div id="reading-content"></div>
-  </section>
-
-  <!-- ===== COMUNIDADE ===== -->
-  <section id="view-comunidade" class="view">
-    <p class="section-eyebrow">Comunidade</p>
-    <h2 class="section-title">Sua conta</h2>
-
-    <div class="account-card" id="account-card">
-      <div id="signed-out-box">
-        <p class="account-hint">Entre com o Google para criar sua própria sala de reunião e guardar seu histórico.</p>
-        <div id="google-btn-container"></div>
-      </div>
-      <div id="signed-in-box" style="display:none;">
-        <img id="user-avatar" class="user-avatar" alt="">
-        <div class="user-info">
-          <strong id="user-name"></strong>
-          <span id="user-email" class="account-hint"></span>
+    <!-- ============ Cabeçalho ============ -->
+    <header class="app-header">
+      <div class="header-row">
+        <img class="header-logo" src="assets/logo.png" alt="Lar Espírita">
+        <div class="header-text">
+          <p class="brand">Lar Espírita</p>
+          <p class="greeting" id="header-greeting">Bem-vindo(a)</p>
         </div>
-        <button class="btn-secondary" id="btn-logout">Sair</button>
+        <button class="header-icon-btn" id="btn-theme-mobile" title="Alternar tema" aria-label="Alternar tema claro/escuro">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z"/></svg>
+        </button>
       </div>
-    </div>
+    </header>
 
-    <p class="section-eyebrow">Sua sala</p>
-    <div class="meet-card" id="create-meeting-card">
-      <h2>Criar reunião</h2>
-      <p>Gere sua própria sala de vídeo para o Evangelho no Lar, sem sair do app.</p>
-      <button class="btn-enter" id="btn-create-meeting">Criar sala →</button>
-    </div>
-    <div id="jitsi-container" class="jitsi-container" style="display:none;"></div>
+    <!-- ============ Conteúdo ============ -->
+    <main class="app-main" id="app-main">
 
-    <p class="section-eyebrow">Tire suas dúvidas</p>
-    <div class="ai-chat">
-      <p class="account-hint">Descreva uma situação da sua vida, ou pergunte algo sobre a doutrina espírita.</p>
-      <div id="ai-messages" class="ai-messages"></div>
-      <div class="ai-input-row">
-        <textarea id="ai-question" class="ai-textarea" rows="2" placeholder="Ex.: Estou passando por um momento difícil no trabalho..."></textarea>
-        <button class="btn-enter" id="btn-ask-ai">Perguntar</button>
-      </div>
-    </div>
-  </section>
+      <!-- ---------- Início ---------- -->
+      <section class="view active" id="view-inicio">
 
-</main>
+        <div class="hero-card">
+          <p class="hero-kicker">Evangelho no Lar · toda semana</p>
+          <h2 id="hero-title">A reunião de família está pronta para começar</h2>
+          <p>Prece de abertura, leitura de um capítulo e um momento de reflexão em conjunto — sempre no mesmo encontro.</p>
+          <button class="btn btn-gold" id="btn-join-meet">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m10 8 6 4-6 4Z"/><rect x="3" y="4" width="18" height="16" rx="3"/></svg>
+            Entrar na reunião
+          </button>
+        </div>
 
-<nav class="tab-bar" data-active="inicio">
-  <span class="tab-indicator" aria-hidden="true"></span>
-  <button data-view="inicio" class="active">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>
-    Início
-  </button>
-  <button data-view="evangelho">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-    Evangelho
-  </button>
-  <button data-view="estudos">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5c3-1.5 6-1.5 8 0v14c-2-1.5-5-1.5-8 0zM20 5c-3-1.5-6-1.5-8 0v14c2-1.5 5-1.5 8 0z"/></svg>
-    Biblioteca
-  </button>
-  <button data-view="comunidade">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 20v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 20v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-    Comunidade
-  </button>
-</nav>
+        <div class="progress-widget" id="progress-widget">
+          <svg class="lamp" viewBox="0 0 44 44">
+            <circle class="lamp-track" cx="22" cy="22" r="18"/>
+            <circle class="lamp-fill" id="lamp-fill" cx="22" cy="22" r="18" stroke-dasharray="113" stroke-dashoffset="113" transform="rotate(-90 22 22)"/>
+          </svg>
+          <div class="copy">
+            <strong id="progress-title">Você ainda não começou a leitura</strong>
+            <span id="progress-detail">Abra Estudos para conhecer os livros disponíveis</span>
+          </div>
+        </div>
+
+        <div class="section" id="continue-section" style="display:none;">
+          <div class="section-head">
+            <p class="eyebrow">Continue estudando</p>
+          </div>
+          <div class="rail" id="continue-rail"></div>
+        </div>
+
+        <div class="section">
+          <div class="section-head">
+            <p class="eyebrow">Reflexão</p>
+          </div>
+          <div class="reflection-card" id="reflection-card">
+            <p class="text">"…"</p>
+            <p class="source"></p>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-head">
+            <p class="eyebrow">Explore</p>
+          </div>
+          <div class="book-grid" style="grid-template-columns:1fr 1fr;">
+            <div class="book-card" data-goto="estudos">
+              <div class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H11a2 2 0 0 1 2 2v14a1.6 1.6 0 0 0-1.6-1.6H4Z"/><path d="M20 5.5c0-.8-.7-1.5-1.5-1.5H13a2 2 0 0 0-2 2v14a1.6 1.6 0 0 1 1.6-1.6H20Z"/></svg></div>
+              <div class="body"><h3>Estudos</h3><span class="meta">Biblioteca</span></div>
+            </div>
+            <div class="book-card" data-goto="ia">
+              <div class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5c.4 1.9 1 3.1 2 4.1 1 1 2.2 1.6 4.1 2-1.9.4-3.1 1-4.1 2-1 1-1.6 2.2-2 4.1-.4-1.9-1-3.1-2-4.1-1-1-2.2-1.6-4.1-2 1.9-.4 3.1-1 4.1-2 1-1 1.6-2.2 2-4.1Z"/></svg></div>
+              <div class="body"><h3>Assistente</h3><span class="meta">Tire dúvidas</span></div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ---------- Estudos: lista de livros ---------- -->
+      <section class="view" id="view-estudos">
+        <p class="eyebrow">Biblioteca</p>
+        <h1 class="page-title">Estudos</h1>
+        <p class="page-subtitle">Tradução própria, feita diretamente do francês original de Kardec.</p>
+
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="text" id="book-search" placeholder="Buscar por capítulo ou tema…">
+        </div>
+
+        <div class="book-grid" id="book-list"></div>
+      </section>
+
+      <!-- ---------- Estudos: capítulos de um livro ---------- -->
+      <section class="view" id="view-chapters">
+        <span class="back-link" data-back="estudos">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          Estudos
+        </span>
+        <p class="eyebrow" id="chapters-eyebrow">Livro</p>
+        <h1 class="page-title" id="chapters-title">—</h1>
+        <p class="page-subtitle" id="chapters-subtitle"></p>
+        <div class="chapter-list" id="chapter-list"></div>
+      </section>
+
+      <!-- ---------- Estudos: leitura ---------- -->
+      <section class="view" id="view-reading">
+        <span class="back-link" data-back="chapters">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          <span id="reading-back-label">Capítulos</span>
+        </span>
+
+        <div class="reading-toolbar">
+          <div>
+            <p class="eyebrow" id="reading-eyebrow">Capítulo</p>
+            <h1 class="page-title" id="reading-title" style="margin-bottom:0;">—</h1>
+          </div>
+          <div class="font-toggle" aria-label="Tamanho do texto">
+            <button type="button" data-fontsize="normal" class="active">A</button>
+            <button type="button" data-fontsize="grande">A</button>
+          </div>
+        </div>
+
+        <div id="reading-content"></div>
+
+        <div class="reading-nav">
+          <button class="btn btn-outline" id="btn-prev-chapter">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            Anterior
+          </button>
+          <button class="btn btn-outline" id="btn-next-chapter">
+            Próximo
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+          </button>
+        </div>
+      </section>
+
+      <!-- ---------- Evangelho no Lar ---------- -->
+      <section class="view" id="view-evangelho">
+        <p class="eyebrow">Toda semana</p>
+        <h1 class="page-title">Evangelho no Lar</h1>
+        <p class="page-subtitle">O encontro de estudo e prece em família — a razão de existir deste app.</p>
+
+        <div class="hero-card">
+          <p class="hero-kicker">Sala fixa da família</p>
+          <h2>Mesmo link de sempre</h2>
+          <p>O botão abaixo abre a videochamada da família no Google Meet, fora do app.</p>
+          <button class="btn btn-gold" id="btn-join-meet-2">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m10 8 6 4-6 4Z"/><rect x="3" y="4" width="18" height="16" rx="3"/></svg>
+            Entrar na reunião
+          </button>
+        </div>
+
+        <div class="section">
+          <div class="section-head"><p class="eyebrow">Roteiro sugerido</p></div>
+          <div class="checklist" id="roteiro-checklist">
+            <div class="checklist-item" data-step="0">
+              <div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg></div>
+              <div class="copy"><strong>Prece de abertura</strong><span>Um momento de silêncio e recolhimento para começar.</span></div>
+            </div>
+            <div class="checklist-item" data-step="1">
+              <div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg></div>
+              <div class="copy"><strong>Leitura de um capítulo</strong><span>Escolham um capítulo do Evangelho Segundo o Espiritismo.</span></div>
+            </div>
+            <div class="checklist-item" data-step="2">
+              <div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg></div>
+              <div class="copy"><strong>Comentários e reflexão</strong><span>Cada um compartilha o que a leitura trouxe.</span></div>
+            </div>
+            <div class="checklist-item" data-step="3">
+              <div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg></div>
+              <div class="copy"><strong>Prece de encerramento</strong><span>Gratidão e votos para a semana que se inicia.</span></div>
+            </div>
+          </div>
+          <button class="btn btn-outline btn-block" id="btn-reset-roteiro" style="margin-top:6px;">Reiniciar roteiro</button>
+        </div>
+      </section>
+
+      <!-- ---------- Assistente (IA) ---------- -->
+      <section class="view" id="view-ia">
+        <p class="eyebrow">Assistente</p>
+        <h1 class="page-title">Tire suas dúvidas</h1>
+        <p class="page-subtitle">Respostas fundamentadas nos livros da Doutrina, com as fontes citadas.</p>
+
+        <div class="chip-row" id="ai-chips">
+          <button class="chip" type="button">O que é o livre-arbítrio?</button>
+          <button class="chip" type="button">Como entender a reencarnação?</button>
+          <button class="chip" type="button">O que a Doutrina diz sobre o perdão?</button>
+          <button class="chip" type="button">Por que existe o sofrimento?</button>
+        </div>
+
+        <div id="ai-empty" class="ai-empty">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5c.4 1.9 1 3.1 2 4.1 1 1 2.2 1.6 4.1 2-1.9.4-3.1 1-4.1 2-1 1-1.6 2.2-2 4.1-.4-1.9-1-3.1-2-4.1-1-1-2.2-1.6-4.1-2 1.9-.4 3.1-1 4.1-2 1-1 1.6-2.2 2-4.1Z"/></svg>
+          <p>Pergunte algo — sobre uma situação real ou uma dúvida de estudo — e receba uma resposta com base nos livros.</p>
+        </div>
+
+        <div class="ai-messages" id="ai-messages"></div>
+
+        <div class="ai-input-bar">
+          <textarea class="ai-textarea" id="ai-question" placeholder="Escreva sua pergunta…" rows="1"></textarea>
+          <button class="ai-send-btn" id="btn-ask-ai" aria-label="Enviar pergunta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4Z"/></svg>
+          </button>
+        </div>
+      </section>
+
+      <!-- ---------- Perfil ---------- -->
+      <section class="view" id="view-perfil">
+        <p class="eyebrow">Sua conta</p>
+        <h1 class="page-title">Perfil</h1>
+
+        <div class="account-card">
+          <div id="signed-out-box">
+            <p class="account-hint">Entre com sua conta Google para criar suas próprias salas de reunião. Ler os livros e usar o assistente não exige login.</p>
+            <div id="google-btn-container"></div>
+          </div>
+          <div id="signed-in-box" style="display:none;">
+            <img class="user-avatar" id="user-avatar" src="assets/logo.png" alt="">
+            <div class="user-info">
+              <strong id="user-name">—</strong>
+              <span id="user-email">—</span>
+            </div>
+            <button class="btn btn-outline btn-sm" id="btn-logout">Sair</button>
+          </div>
+        </div>
+
+        <div class="section" id="create-meeting-card">
+          <div class="section-head"><p class="eyebrow">Sua sala</p></div>
+          <div class="book-card" style="cursor:default;">
+            <div class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m10 8 6 4-6 4Z"/><rect x="3" y="4" width="18" height="16" rx="3"/></svg></div>
+            <div class="body"><h3>Criar uma sala</h3><span class="meta">Videochamada embutida, feita na hora</span></div>
+          </div>
+          <button class="btn btn-gold btn-block" id="btn-create-meeting" style="margin-top:12px;">Criar sala agora</button>
+        </div>
+
+        <div class="jitsi-container" id="jitsi-container" style="display:none;"></div>
+
+        <div class="section">
+          <div class="section-head"><p class="eyebrow">Preferências</p></div>
+          <div class="settings-list">
+            <div class="settings-row">
+              <span class="label">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z"/></svg>
+                Modo escuro
+              </span>
+              <label class="switch">
+                <input type="checkbox" id="theme-switch">
+                <span class="track"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-head"><p class="eyebrow">Sobre</p></div>
+          <div class="settings-list">
+            <div class="settings-row">
+              <button type="button" class="link-row" id="btn-about">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 16v-5"/><path d="M12 8h.01"/></svg>
+                Sobre o Lar Espírita
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
 
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 <script src="https://meet.jit.si/external_api.js"></script>
 <script src="js/meet-config.js"></script>
-<script src="js/community.js"></script>
 <script src="js/app.js"></script>
+<script src="js/library.js"></script>
+<script src="js/evangelho.js"></script>
+<script src="js/ai.js"></script>
+<script src="js/account.js"></script>
 </body>
 </html>
