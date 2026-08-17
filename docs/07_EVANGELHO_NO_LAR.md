@@ -24,9 +24,9 @@ entre participantes. Ideias de evolução (sorteio de capítulo/pergunta, roteir
 progresso em tempo real entre participantes, cronômetro) estão em `11_ROADMAP.md`,
 não implementadas.
 
-## Diferença para "Comunidade → Criar sala"
+## Diferença para "Perfil → Criar sala"
 
-| | Reunião fixa (Início/Evangelho) | Sala criada em Comunidade |
+| | Reunião fixa (Início/Evangelho) | Sala criada em Perfil |
 |---|---|---|
 | Link | Sempre o mesmo, configurado no código | Novo a cada vez que a pessoa cria |
 | Quem pode entrar | Quem tem o link (não muda) | Quem tem o link daquela sala específica |

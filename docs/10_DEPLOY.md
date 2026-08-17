@@ -37,7 +37,7 @@ wrangler d1 execute lar-espirita-db --file=worker/schema.sql --remote
 
 Cole esse Client ID em **dois lugares**:
 - `wrangler.toml` → `GOOGLE_CLIENT_ID`
-- `js/community.js` → constante `GOOGLE_CLIENT_ID` no topo do arquivo
+- `js/account.js` → constante `GOOGLE_CLIENT_ID` no topo do arquivo
 
 (O Client ID não é segredo — ele fica visível no navegador de qualquer forma — por
 isso pode ficar direto no código, diferente da chave da IA abaixo.)
@@ -87,11 +87,12 @@ Abre em `http://localhost:8787`. Você vai precisar adicionar essa URL nas
 | `worker/src/search.js` | Busca trechos relevantes nos dois livros para embasar a resposta da IA |
 | `worker/src/ai.js` | Chama a API da Anthropic com o contexto encontrado |
 | `worker/schema.sql` | Estrutura do banco (usuários, salas, histórico de perguntas) |
-| `js/community.js` | Frontend: botão de login (popup, sem sair do app), criação de sala, chat com a IA |
+| `js/account.js` | Frontend: botão de login (popup, sem sair do app), criação de sala |
+| `js/ai.js` | Frontend: chat com a IA |
 
 ### Sobre a videochamada
 
 As reuniões agora usam **Jitsi Meet** (gratuito, sem login necessário pra quem entra na sala,
 e funciona embutido dentro do app — diferente do Google Meet, que não permite embutir).
 O botão "Entrar na reunião" do Início/Evangelho continua abrindo o Google Meet fixo de vocês;
-o botão novo em Comunidade cria uma sala Jitsi nova, dentro do app.
+o botão novo em Perfil cria uma sala Jitsi nova, dentro do app.

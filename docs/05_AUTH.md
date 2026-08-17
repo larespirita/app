@@ -13,7 +13,7 @@ fecha sozinha e devolve o controle pro app, sem navegar a aba principal para for
 
 ## Fluxo
 
-1. Frontend (`js/community.js`) carrega o script do Google e renderiza o botão
+1. Frontend (`js/account.js`) carrega o script do Google e renderiza o botão
    oficial "Entrar com Google" dentro de `#google-btn-container`
 2. Pessoa autentica no popup → Google devolve um `credential` (JWT assinado por eles)
 3. Frontend manda esse `credential` pro backend: `POST /api/auth/google`
@@ -48,5 +48,5 @@ fecha sozinha e devolve o controle pro app, sem navegar a aba principal para for
 ## Configuração necessária (fora do código)
 
 Client ID OAuth criado no Google Cloud Console, colado em dois lugares:
-`wrangler.toml` (`GOOGLE_CLIENT_ID`) e `js/community.js` (constante no topo).
+`wrangler.toml` (`GOOGLE_CLIENT_ID`) e `js/account.js` (constante no topo).
 Passo a passo completo em `DEPLOY.md`.

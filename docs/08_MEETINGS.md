@@ -4,7 +4,7 @@
 
 - **Google Meet** — usado só para a sala fixa da família (`js/meet-config.js`).
   Mantido porque já era o que a família usava antes do app existir.
-- **Jitsi Meet** — usado para salas criadas por qualquer pessoa logada, em Comunidade.
+- **Jitsi Meet** — usado para salas criadas por qualquer pessoa logada, em Perfil.
 
 ## Por que dois, e não só um
 
@@ -24,7 +24,7 @@ compatível com "nunca sair do app".
 2. Backend gera um `room_name` aleatório (`worker/src/utils.js`, `randomId(16)`) —
    difícil de adivinhar, funciona como "senha" da sala por obscuridade
 3. Sala salva na tabela `meetings` (dono = quem criou)
-4. Frontend recebe o `room_name` e chama `embedJitsi()` (`js/community.js`), que usa
+4. Frontend recebe o `room_name` e chama `embedJitsi()` (`js/account.js`), que usa
    `JitsiMeetExternalAPI` (carregado de `meet.jit.si/external_api.js`) para desenhar
    a videochamada dentro de `#jitsi-container`
 

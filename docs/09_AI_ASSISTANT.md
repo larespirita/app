@@ -8,7 +8,7 @@ precisar que um humano (o dono do app) responda manualmente cada dúvida.
 
 ## Fluxo
 
-1. Frontend (`js/community.js`, `askAI()`) manda `POST /api/ask` com `{question}`
+1. Frontend (`js/ai.js`, `askAI()`) manda `POST /api/ask` com `{question}`
 2. Backend (`worker/src/search.js`, `findRelevantExcerpts`) faz uma busca simples por
    palavras-chave nos dois livros (ver `06_LIBRARY.md`) e seleciona até 4 trechos
    relevantes — pula qualquer capítulo ainda placeholder

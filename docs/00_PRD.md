@@ -27,10 +27,14 @@ Evangelho no Lar — em família, sozinho, ou em comunidade com outras pessoas i
 
 | Área | O que faz |
 |---|---|
-| Início | Card de acesso rápido à reunião fixa da família + atalho para continuar a leitura |
-| Evangelho no Lar | Roteiro sugerido da reunião + link fixo do Google Meet da família |
+| Início | Reunião fixa da família, progresso de leitura, "continue estudando", reflexão do dia |
 | Estudos | Biblioteca com O Livro dos Espíritos e O Evangelho Segundo o Espiritismo, por capítulo |
-| Comunidade | Login Google (popup), criação de sala própria (Jitsi, embutida), IA de dúvidas baseada nos livros |
+| Evangelho no Lar | Roteiro sugerido da reunião (checklist) + link fixo do Google Meet da família |
+| Assistente | IA de dúvidas baseada nos livros, com fontes citadas |
+| Perfil | Login Google (popup), criação de sala própria (Jitsi, embutida), tema claro/escuro |
+
+(Revisão: "Comunidade" foi desmembrada em **Assistente** e **Perfil** — eram três
+funções sem relação direta competindo pelo mesmo espaço. Ver `04_UI_UX.md`.)
 
 Ver `06_LIBRARY.md`, `07_EVANGELHO_NO_LAR.md`, `08_MEETINGS.md` e `09_AI_ASSISTANT.md` para
 os detalhes de cada uma.

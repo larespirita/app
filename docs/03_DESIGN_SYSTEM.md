@@ -3,68 +3,83 @@
 Fonte da verdade: `css/style.css` (variáveis no topo do arquivo, em `:root`).
 Este documento explica o *porquê* das escolhas, não repete o CSS inteiro.
 
+> Revisão (reengenharia completa): a paleta "calma" (azul+verde estilo Kindle/Calm)
+> foi substituída pela identidade da própria marca — a logo (`assets/logo.png`) já
+> era um azul-noite profundo com raios de luz dourados saindo de uma casa. O app
+> passou a usar essa mesma linguagem visual em vez de uma paleta genérica escolhida
+> à parte da marca.
+
 ## Filosofia
 
-Referência: Kindle (leitura limpa) + Calm (tranquilidade) + Google Meet (simplicidade
-de videochamada). Deliberadamente **não** parece um app "religioso" no sentido visual
-— sem cruzes, sem imagens de espíritos, sem excesso de dourado, sem fundo carregado,
-sem efeitos/animações chamativas. A sensação buscada é paz, leveza, simplicidade.
+"Uma casa acesa numa noite escura" — o elemento central da própria logo. Isso dá
+duas cores de assinatura (azul-noite + dourado de vela) e uma metáfora concreta
+para progresso de leitura (a "lâmpada" que se acende conforme os capítulos são
+lidos, em vez de uma barra de progresso genérica). Continua sem cruzes, sem
+imagens de espíritos, sem iconografia religiosa literal — o "sagrado" aqui é
+sugerido por luz e silêncio, não por símbolos.
 
-**Regra prática**: qualquer elemento visual novo deve passar no teste "isso deixa a
-tela mais carregada?" — se sim, provavelmente não deveria entrar.
+**Regra prática**: o dourado é cor de destaque, não cor de fundo — se um card
+inteiro ficar dourado, provavelmente é uso em excesso.
 
 ## Paleta
 
 | Variável CSS | Valor | Uso |
 |---|---|---|
-| `--color-primary` | `#1E3A5F` (azul profundo) | Cor principal — cards de destaque, títulos, botões de texto |
-| `--color-secondary` | `#5C8D76` (verde suave) | Bordas em hover, destaques leves (ex.: mensagens da IA) |
-| `--color-bg` | `#FAF9F6` (branco quente) | Fundo do app inteiro — **sólido**, sem textura |
-| `--color-accent` | `#C9A227` (dourado discreto) | Só para pequenos detalhes pontuais — nunca dominante |
+| `--ink-900` | `#0F1729` (azul-noite) | Fundo do cabeçalho, nav, cards em destaque, fundo do app em modo escuro |
+| `--ink-800` | `#16213E` | Superfície de cards em modo escuro |
+| `--paper-050` | `#FAF7F0` (branco quente) | Fundo do app em modo claro |
+| `--gold-500` | `#C9A24C` (dourado de vela) | Cor de assinatura — CTA principal, progresso, números de questão. Usar com moderação |
+| `--slate-500` | `#4A5F7A` (azul-ardósia) | Links e ações secundárias, mensagens do usuário no chat |
 | `--text-main` / `--text-soft` / `--text-inverse` | | Texto principal / secundário / sobre fundo escuro |
 
-Nada de gradientes chamativos, glow, ou glassmorphism pesado — cards usam fundo sólido
-branco com borda fina (`--border-soft: #E4E1D8`) e sombra bem discreta.
+Modo claro e escuro são o mesmo sistema de tokens — só a atribuição de
+`--bg-app`/`--bg-surface` muda via `[data-theme="dark"]` (ver `js/app.js`,
+`applyTheme()`). Preferência salva em `localStorage` (`lar-espirita:theme`),
+com fallback para `prefers-color-scheme`.
 
 ## Tipografia
 
-- **Merriweather** (serifada) → títulos, nomes de capítulo, perguntas
-- **Inter** (sem serifa) → corpo de texto, botões, navegação
+- **Fraunces** (serifada, variável) → títulos, nomes de capítulo, perguntas
+  numeradas, citações da "Reflexão do dia". Remete à tipografia de livros do
+  século XIX — a época da codificação de Kardec.
+- **Manrope** (sem serifa, geométrica) → corpo de texto, botões, navegação,
+  interface em geral.
 
-(Antes usávamos Fraunces + paleta dourada/noite — trocado nesta revisão para a
-filosofia "calma" descrita acima.)
+## Elemento de assinatura: o facho de luz
 
-## Fundo do app
+Usado com moderação em exatamente dois lugares, para não virar papel de parede:
+1. Um gradiente radial sutil atrás do cabeçalho (`header.app-header::before`)
+2. O widget "janela acesa" na Início — um anel circular (`.progress-widget .lamp`)
+   que se preenche de dourado proporcionalmente aos capítulos lidos
 
-Sólido (`--color-bg`), sem textura/mosaico. Tentamos antes uma textura repetida
-(`assets/fundo.jpg`) e foi removida por contradizer a filosofia de "sem fundo
-carregado" — o arquivo ainda existe em `assets/` mas não é mais referenciado no CSS.
+Fora desses dois lugares, os cards são sólidos, com borda fina e sombra discreta
+— sem glassmorphism, sem glow espalhado pela tela.
 
-## Cabeçalho
+## Navegação
 
-Compacto: logo pequena (ícone, não banner) + saudação por horário ("Bom dia" /
-"Boa tarde" / "Boa noite", `js/app.js`). Nada de imagem em largura total, glow
-animado ou pulsação — isso foi tentado numa versão anterior e destoava da filosofia
-"calma" adotada depois.
+- **Mobile** (< 900px): barra fixa embaixo, 5 ícones + label (`nav.app-nav`)
+- **Desktop/tablet** (≥ 900px): a mesma `nav.app-nav` vira uma coluna lateral
+  fixa à esquerda, com marca no topo e alternância de tema no rodapé — troca só
+  de layout via media query, sem duplicar HTML
 
 ## Componentes recorrentes
 
-- **`.meet-card`** — único bloco que usa cor sólida forte (`--color-primary`), reservado
-  para a ação mais importante da tela (entrar na reunião)
-- **`.book-card` / `.chapter-item` / `.reading-block` / `.account-card` / `.ai-chat`**
-  — cards brancos, borda fina, sombra discreta, sem blur/glassmorphism
-- **`.btn-enter`** — botão principal, sólido, sem brilho/shimmer animado
-- **`.btn-secondary`** — ações secundárias, contorno fino, sem preenchimento
-- **`nav.tab-bar`** — menu inferior fixo, ícone + label, sem indicador deslizante
-  (removido — era um efeito a mais que não combinava com a filosofia minimalista);
-  o estado ativo é só a cor do ícone/texto mudando para `--color-primary`
+- **`.hero-card`** — único bloco que usa `--ink-900` sólido, reservado para a
+  ação mais importante da tela (entrar na reunião)
+- **`.progress-widget`** — a "janela acesa", usada só na Início
+- **`.book-card` / `.chapter-item` / `.reading-block` / `.account-card`** —
+  cards com fundo de superfície, borda fina, sombra discreta
+- **`.checklist-item`** — usado no roteiro do Evangelho no Lar, marca/desmarca
+  etapas do encontro (estado local, reinicia todo dia)
+- **`.btn-gold`** — botão principal (CTA único por tela)
+- **`.btn-outline`** — ações secundárias, contorno fino, sem preenchimento
 
 ## Animação
 
-M�nima de propósito: só fade suave ao trocar de aba (`fade-in`, 0.25s). Sem glow
-pulsante, sem shine sweep, sem partículas. Respeita `prefers-reduced-motion`.
+Fade + leve subida ao trocar de view (`rise-in`, 0.28s). Sem glow pulsante
+constante, sem shine sweep, sem partículas. Respeita `prefers-reduced-motion`.
 
 ## Ícones
 
-SVG inline, outline (`stroke="currentColor"`, `stroke-width="2"`, sem preenchimento) —
-mesmo estilo do Material Design mencionado na referência de design.
+SVG inline, outline (`stroke="currentColor"`, `stroke-width="1.8"`, sem
+preenchimento) — consistente em todas as telas e nos dois tamanhos de nav.

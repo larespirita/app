@@ -34,7 +34,10 @@ app (`index.html`, `css/`, `js/`, `assets/`, `data/`).
 | `index.html` | Estrutura de todas as telas (views) |
 | `css/style.css` | Todo o visual do app |
 | `js/app.js` | Navegação entre views, renderização da biblioteca (livros/capítulos), progresso de leitura |
-| `js/community.js` | Login Google, criação de sala Jitsi, chat com a IA |
+| `js/account.js` | Login Google, criação de sala Jitsi (usado em Perfil) |
+| `js/ai.js` | Chat com a IA (usado em Assistente) |
+| `js/library.js` | Biblioteca, capítulos, leitura, progresso (usado em Estudos) |
+| `js/evangelho.js` | Checklist do roteiro (usado em Evangelho) |
 | `js/meet-config.js` | Configuração do link fixo do Google Meet da família |
 | `sw.js` | Service worker (cache offline) |
 | `manifest.json` | Configuração do PWA (ícones, cores, nome) |

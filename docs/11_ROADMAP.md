@@ -25,7 +25,7 @@ decidido ou priorizado — é uma lista de possibilidades para puxar quando fize
 - Lista de "minhas salas anteriores" (a rota de backend já existe, falta o frontend)
 - Mensagem do Dia — um texto único, igual para todo mundo, trocado diariamente
 
-## Comunidade / Conta
+## Perfil / Conta
 
 - Login por email/senha e Apple, além do Google
 - Perfil com foto, histórico, favoritos, configurações
